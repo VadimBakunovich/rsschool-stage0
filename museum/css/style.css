@@ -49,7 +49,7 @@ html {
 }
 .bg {
   position: absolute;
-  width: 1920px;
+  width: 1900px;
   height: 750px;
   top: 200px;
   left: 50%;
@@ -57,7 +57,7 @@ html {
   background-image: url(../assets/img/header_bg.jpg);
   background-size: 1215px 750px;
   background-repeat: no-repeat;
-  background-position: 100% 0;
+  background-position: calc(100% + 10px) 0;
   z-index: -1;
 }
                                           /*Header*/
@@ -128,4 +128,55 @@ html {
   background-color: #710707;
   border: none;
   border-radius: 10px;
+}
+                                          /*Visiting-section*/
+.visiting {
+  background-color: #fff;
+}
+.visiting__title {
+  margin-bottom: 25px;
+}
+.visiting__list {
+  padding-top: 75px;
+  border-top: 3px solid #710707;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 78px;
+  column-gap: 60px;
+}
+.card__ref {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+.card-photo__img {
+  display: block;
+  width: 440px;
+  height: 285px;
+  margin-bottom: 25px;
+}
+.card-photo__descr {
+  margin-bottom: 9px;
+  font-family: 'Forum', Arial;
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.card__border {
+  width: 300px;
+  margin-bottom: 10px;
+  border-top: 2px solid #710707;
+}
+.card__descr1 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 100;
+}
+.card__descr2 {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 100;
 }
