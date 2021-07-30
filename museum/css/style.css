@@ -36,6 +36,13 @@ html {
 .text-color--gold {
   color: #9D8665;
 }
+.bg-color--white {
+  background-color: #fff;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
                                           /*Hide heading*/
 .visually-hidden {
   position: absolute;
@@ -44,6 +51,7 @@ html {
   height: 1px;
   margin: -1px;
 }
+                                          /*Background*/
 .bg-wrapper {
   position: relative;
 }
@@ -73,7 +81,6 @@ html {
   width: 195px;
   display: flex;
   align-items: center;
-  
 }
 .header-logo__img {
   width: 50px;
@@ -126,13 +133,9 @@ html {
   letter-spacing: 2px;
   color: #fff;
   background-color: #710707;
-  border: none;
   border-radius: 10px;
 }
                                           /*Visiting-section*/
-.visiting {
-  background-color: #fff;
-}
 .visiting__title {
   margin-bottom: 25px;
 }
@@ -206,4 +209,79 @@ html {
   margin-top: 15px;
   width: 720px;
   height: 700px;
+}
+                                          /*Journey-section*/
+.player-window {
+  position: relative;
+}
+.journey__big-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  padding-left: 25px;
+  border: 9px solid #fff;
+  border-radius: 50%;
+  background-color: transparent;
+  z-index: 10;
+}
+.journey__img {
+  display: block;
+  width: 100%;
+  height: min(629px, calc(100% - 811px));
+}
+.journey__controls {
+  margin-bottom: 40px;
+  padding: 25px 41px;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+}
+.controls__btn {
+  display: flex;
+  align-items: center;
+  margin-right: 41px;
+  background-color: transparent;
+}
+.controls__progress {
+  flex-shrink: 0;
+  margin-right: 41px;
+  background: linear-gradient(to right, #24809E 0%, #24809E 47%, #b3b3b3 47%, #b3b3b3 100%);
+  height: 8px;
+  width: 820px;
+  appearance: none;
+}
+.controls__progress::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  appearance: none;
+  cursor: ew-resize;
+  background: #fff;
+}
+.controls__volume {
+  flex-shrink: 0;
+  margin-right: 21px;
+  width: 38px;
+  height: 30px;
+}
+.volume {
+  flex-shrink: 0;
+  width: 155px;
+  margin-right: 48px;
+}
+.journey__text-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.journey__descr {
+  width: min(720px, calc(100% - 720px));
+  padding-right: 10px;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 38px;
+  color: #000;
 }
