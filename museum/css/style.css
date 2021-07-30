@@ -43,6 +43,11 @@ button {
   border: none;
   cursor: pointer;
 }
+.h3-style {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+}
                                           /*Hide heading*/
 .visually-hidden {
   position: absolute;
@@ -284,4 +289,120 @@ button {
   font-size: 22px;
   line-height: 38px;
   color: #000;
+}
+                                          /*Journey-section*/
+.tickets__title {
+  margin-bottom: 25px;
+}
+.tickets__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.tickets__bg {
+  width: 720px;
+  height: 550px;
+  background: url(../assets/img/tickets.jpg) no-repeat;
+}
+.tickets__buying {
+  display: flex;
+  justify-content: space-between;
+  width: 625px;
+}
+.tickets-type__title {
+  margin-bottom: 50px;
+}
+.ticket-type__form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 270px;
+  height: 175px;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+}
+.ticket-type__radio {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.ticket-type__label {
+  cursor: pointer;
+}
+.ticket-type__label::before {
+  content: '';
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin-right: 23px;
+}
+.ticket-type__radio:checked + .ticket-type__label::before {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 9px;
+}
+.tickets-amount__title {
+  margin-bottom: 11px;
+  text-align: right;
+}
+.tickets__border {
+  margin-bottom: 75px;
+  border-top: 3px solid #710707;
+}
+.tickets-amount__descr {
+  margin: 0 0 14px 25px;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+}
+.number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+	width: 150px;
+  height: 50px;
+  padding: 6px 14px;
+  margin: 0 0 35px 25px;
+  border: 3px solid #fff;
+}
+.number__input {
+	width: 30px;
+  font-size: 22px;
+  line-height: 26px;
+  color: #fff;
+	text-align: center;
+	appearance: textfield;
+  background-color: #000;
+  border: none;
+  z-index: -1;
+}
+.number input::-webkit-outer-spin-button,
+.number input::-webkit-inner-spin-button {
+	display: none;
+}
+.number__btn {
+	font-size: 32px;
+	line-height: 32px;
+  color: #fff;
+  background-color: #000;
+}
+.tickets-amount__total {
+  margin: 50px 0 50px 25px;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 1.65px;
+}
+.tickets-amount__btn {
+  display: block;
+  width: 175px;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 50px;
+  letter-spacing: 2px;
+  border-radius: 2px;
 }

@@ -144,7 +144,7 @@
               but because it looked different.
             </p>
           </div>
-          <img class="explore__img" src="./assets/img/explore.jpg" alt="Night Palace">
+          <img class="explore__img" src="./assets/img/explore.jpg" alt="Velazques: The family of Philip IV">
         </div>
       </section>
       <section class="journey bg-color--white" id="video">
@@ -193,8 +193,53 @@
             </button>
           </div>
           <div class="journey__text-block">
-            <h2 class="journey__title section-title text-color--gold">Video journey</h2>
+            <h2 class="section-title text-color--gold">Video journey</h2>
             <p class="journey__descr">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
+          </div>
+        </div>
+      </section>
+      <section class="tickets" id="tickets">
+        <div class="container">
+          <h2 class="tickets__title section-title">Buy tickets</h2>
+          <div class="tickets__border"></div>
+          <div class="tickets__wrapper">
+            <div class="tickets__bg"></div>
+            <div class="tickets__buying">
+              <div class="tickets__type tickets-type">
+                <h3 class="tickets-type__title h3-style">Ticket type</h3>
+                <form class="ticket-type__form">
+                  <input class="ticket-type__radio" type="radio" name="type" id="permanent" checked>
+                  <label class="ticket-type__label" for="permanent">
+                    Permanent exhibition
+                  </label>
+                  <input class="ticket-type__radio" type="radio" name="type" id="temporary">
+                  <label class="ticket-type__label" for="temporary">
+                    Temporary exhibition
+                  </label>
+                  <input class="ticket-type__radio" type="radio" name="type" id="combined">
+                  <label class="ticket-type__label" for="combined">
+                    Combined Admission
+                  </label>
+                </form>
+              </div>
+              <div class="tickets__amount tickets-amount">
+                <h3 class="tickets-amount__title h3-style">Amount</h3>
+                <p class="tickets-amount__descr">Basic 18+</p>
+                <div class="number">
+                  <button class="number__btn number--minus" type="button" onclick="this.nextElementSibling.stepDown()">&#8722;</button>
+                  <input class="number__input" type="number" min="0" value="1" readonly>
+                  <button class="number__btn number--plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div>
+                <p class="tickets-amount__descr">Senior 65+</p>
+                <div class="number">
+                  <button class="number__btn number--minus" type="button" onclick="this.nextElementSibling.stepDown()">&#8722;</button>
+                  <input class="number__input" type="number" min="0" value="1" readonly>
+                  <button class="number__btn number--plus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div>
+                <p class="tickets-amount__total">Total &#8364;220</p>
+                <button class="tickets-amount__btn">Buy Now</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
