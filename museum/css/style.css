@@ -22,6 +22,14 @@ html {
   margin: 0 auto;
   padding: 75px 40px;
 }
+.nav-list-text {
+  font-size: 22px;
+  font-weight: 100;
+  line-height: 50px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+}
 .no-list-style {
   list-style-type: none;
 }
@@ -35,6 +43,9 @@ html {
 }
 .text-color--gold {
   color: #9D8665;
+}
+.text-color--black {
+  color: #000;
 }
 .bg-color--white {
   background-color: #fff;
@@ -112,12 +123,6 @@ button {
 }
 .header-nav-list__item {
   padding-left: 30px;
-  font-size: 22px;
-  font-weight: 100;
-  line-height: 50px;
-  letter-spacing: 2px;
-  color: #fff;
-  text-decoration: none;
 }
                                           /*Welcome-section*/
 .welcome__title {
@@ -142,6 +147,9 @@ button {
   border-radius: 10px;
 }
                                           /*Visiting-section*/
+.visiting--padding {
+  padding: 75px 40px 73px 40px;
+}
 .visiting__title {
   margin-bottom: 25px;
 }
@@ -151,7 +159,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: 78px;
+  row-gap: 76px;
   column-gap: 60px;
 }
 .card__ref {
@@ -176,7 +184,7 @@ button {
 }
 .card__border {
   width: 300px;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
   border-top: 2px solid #710707;
 }
 .card__descr1 {
@@ -202,11 +210,11 @@ button {
   margin-bottom: 25px;
 }
 .explore__border {
-  margin-bottom: 75px;
+  margin-bottom: 76px;
   border-top: 3px solid #710707;
 }
 .explore__descr {
-  margin-bottom: 25px;
+  margin-bottom: 26px;
   padding-right: 5px;
   font-weight: 300;
   font-size: 22px;
@@ -219,7 +227,7 @@ button {
 }
                                           /*Journey-section*/
 .journey--padding {
-  padding: 88px 40px 81px 40px;
+  padding: 90px 40px 74px 40px;
 }
 .player-window {
   position: relative;
@@ -291,7 +299,6 @@ button {
   font-weight: 300;
   font-size: 22px;
   line-height: 38px;
-  color: #000;
 }
                                           /*Tickets-section*/
 .tickets__title {
@@ -312,7 +319,7 @@ button {
   width: 660px;
 }
 .tickets-type__title {
-  margin-bottom: 50px;
+  margin-bottom: 51px;
 }
 .ticket-type__form {
   position: relative;
@@ -349,7 +356,7 @@ button {
   background-size: 9px;
 }
 .tickets-amount__title {
-  margin-bottom: 11px;
+  margin-bottom: 12px;
   text-align: right;
 }
 .tickets__border {
@@ -368,7 +375,7 @@ button {
   align-items: center;
 	width: 150px;
   height: 50px;
-  padding: 6px 14px;
+  padding: 6px 11px;
   margin: 0 0 35px 25px;
   border: 3px solid #fff;
 }
@@ -401,7 +408,6 @@ button {
   letter-spacing: 1.65px;
 }
 .tickets-amount__btn {
-  display: block;
   width: 175px;
   font-weight: 300;
   font-size: 22px;
@@ -410,9 +416,6 @@ button {
   border-radius: 2px;
 }
                                           /*Contacts-section*/
-.contacts--padding {
-  padding: 68px 40px 75px 40px;
-}
 .contacts__title {
   margin-bottom: 25px;
 }
@@ -430,14 +433,12 @@ button {
   font-weight: 500;
   font-size: 28px;
   line-height: 34px;
-  color: #000;
 }
 .contacts-text-block__descr {
   margin-bottom: 20px;
   font-weight: 300;
   font-size: 22px;
   line-height: 26px;
-  color: #000;
 }
                                           /*Footer*/
 .footer-wrapper {
@@ -446,9 +447,10 @@ button {
 }
 .footer__logo {
   align-self: flex-start;
+  flex-grow: 1;
 }
 .footer__nav {
-  padding-right: 253px;
+  flex-grow: 2.73;
 }
 .footer-nav__list {
   width: 366px;
@@ -459,18 +461,10 @@ button {
   flex-wrap: wrap;
   column-gap: 153px;
 }
-.footer-nav-list__item {
-  font-size: 22px;
-  font-weight: 100;
-  line-height: 50px;
-  letter-spacing: 2px;
-  color: #fff;
-  text-decoration: none;
-}
 .footer__socials {
+  width: 336px;
   margin-bottom: 15px;
   align-self: flex-end;
-  width: 336px;
   display: flex;
   justify-content: space-between;
 }
