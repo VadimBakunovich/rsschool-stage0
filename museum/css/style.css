@@ -29,6 +29,10 @@ html {
   letter-spacing: 2px;
   color: #fff;
   text-decoration: none;
+  transition: color 300ms;
+}
+.nav-list-text:hover {
+  color: #9D8665;
 }
 .no-list-style {
   list-style-type: none;
@@ -67,27 +71,7 @@ button {
   height: 1px;
   margin: -1px;
 }
-                                          /*Background*/
-.bg-wrapper {
-  position: relative;
-}
-.bg {
-  position: absolute;
-  width: clamp(1520px, calc(98vw + 22px), 1920px);
-  height: 750px;
-  top: 200px;
-  left: 50%;
-  transform: translate(-50%);
-  background-image: url(../assets/img/header_bg.jpg);
-  background-size: 1215px 750px;
-  background-repeat: no-repeat;
-  background-position: 100% 0;
-  z-index: -1;
-}
                                           /*Header*/
-.header {
-  margin-bottom: 40px;
-}
 .header__wrapper {
   display: flex;
   justify-content: space-between;
@@ -125,8 +109,12 @@ button {
   padding-left: 30px;
 }
                                           /*Welcome-section*/
+.welcome {
+  background: #030303 url(../assets/img/header_bg.jpg) right top / contain no-repeat;
+  background-position: calc(50% + 352px) 100%;
+}
 .welcome--padding {
-  padding: 74px 40px 76px 40px;
+  padding: 114px 40px 76px 40px;
 }
 .welcome__title {
   margin-bottom: 26px;
@@ -148,6 +136,10 @@ button {
   color: #fff;
   background-color: #710707;
   border-radius: 10px;
+  transition: background-color 300ms;
+}
+.welcome__btn:hover {
+  background-color: #9D8665;
 }
                                           /*Visiting-section*/
 .visiting--padding {
@@ -161,7 +153,7 @@ button {
   border-top: 3px solid #710707;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   row-gap: 76px;
   column-gap: 60px;
 }
@@ -189,6 +181,10 @@ button {
   width: 300px;
   margin-bottom: 11px;
   border-top: 2px solid #710707;
+  transition: width 750ms;
+}
+.card__ref:hover > .card__border {
+  width: 100%;
 }
 .card__descr1 {
   margin-bottom: 10px;
@@ -228,14 +224,14 @@ button {
   width: 720px;
   height: 700px;
 }
-                                          /*Journey-section*/
-.journey--padding {
+                                          /*Video-section*/
+.video--padding {
   padding: 90px 40px 74px 40px;
 }
 .player-window {
   position: relative;
 }
-.journey__big-btn {
+.video__big-btn {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -247,13 +243,20 @@ button {
   border-radius: 50%;
   background-color: transparent;
   z-index: 10;
+  transition: border 300ms;
 }
-.journey__img {
+.video__big-btn:hover {
+  border: 9px solid #9D8665;
+}
+.video__big-btn:hover > .big-btn__svg > .path {
+  fill: #9D8665;
+}
+.video__img {
   display: block;
   width: 100%;
   height: min(629px, calc(100% - 811px));
 }
-.journey__controls {
+.video__controls {
   margin-bottom: 40px;
   padding: 25px 41px;
   display: flex;
@@ -265,6 +268,10 @@ button {
   align-items: center;
   margin-right: 41px;
   background-color: transparent;
+  transition: fill 300ms;
+}
+.controls__btn:hover > .controls-btn__svg > .path {
+  fill: #989898;
 }
 .controls__progress {
   flex-shrink: 0;
@@ -291,12 +298,12 @@ button {
   width: 155px;
   margin-right: 48px;
 }
-.journey__text-block {
+.video__text-block {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.journey__descr {
+.video__descr {
   width: min(720px, calc(100% - 720px));
   padding-right: 10px;
   font-weight: 300;
@@ -342,6 +349,10 @@ button {
 }
 .ticket-type__label {
   cursor: pointer;
+  transition: color 300ms;
+}
+.ticket-type__label:hover {
+  color: #9D8665;
 }
 .ticket-type__label::before {
   content: '';
@@ -402,6 +413,10 @@ button {
 	line-height: 32px;
   color: #fff;
   background-color: #030303;
+  transition: color 300ms;
+}
+.number__btn:hover {
+  color: #9D8665;
 }
 .tickets-amount__total {
   margin: 50px 0 50px 25px;
@@ -417,6 +432,10 @@ button {
   line-height: 50px;
   letter-spacing: 2px;
   border-radius: 2px;
+  transition: background-color 300ms;
+}
+.tickets-amount__btn:hover {
+  background-color: #9D8665;
 }
                                           /*Contacts-section*/
 .contacts__title {
@@ -472,7 +491,7 @@ button {
 }
 .footer__socials {
   width: 336px;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
   align-self: flex-end;
   display: flex;
   justify-content: space-between;
@@ -484,10 +503,20 @@ button {
   height: 48px;
   border-radius: 50%;
   border: 1px solid #666666;
+  transition: border 300ms;
+}
+.socials__logo:hover {
+  border: 1px solid #9D8665;
 }
 .youtube, .twitter {
   padding-top: 15px;
 }
 .instagram, .facebook, .pinterest {
   padding-top: 13px;
+}
+.path {
+  transition: fill 300ms;
+}
+.socials__logo:hover > .socials__svg > .path {
+  fill: #9D8665;
 }
