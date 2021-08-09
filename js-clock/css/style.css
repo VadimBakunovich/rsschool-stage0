@@ -1,0 +1,28 @@
+                                          /*Common*/
+html { 
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+.body {
+  font-family: 'Roboto', Arial;
+  font-style: normal;
+  font-weight: normal;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1360px;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: no-repeat center / 404px url('../img/bg2.png');
+}
+#sec {
+  transition: transform 200ms cubic-bezier(0.4, 2, 0.55, 0.4);
+}
