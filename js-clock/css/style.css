@@ -21,7 +21,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: no-repeat center / 404px url('../img/bg2.png');
+  background: no-repeat center / 404px url('../img/face.png');
 }
 #sec {
   transition: transform 200ms cubic-bezier(0.4, 2, 0.55, 0.4);
