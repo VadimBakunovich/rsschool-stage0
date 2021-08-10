@@ -12,30 +12,31 @@
 </head>
 <body>
   <div class="container">
-    <svg width="400" height="400" viewBox="-5 -5 310 310" xmlns="http://www.w3.org/2000/svg">
-      <circle 
+    <div class="clock">
+      <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <line id="hour" 
+          x1="150" y1="160" 
+          x2="150" y2="60" 
+          stroke="black" stroke-width="6" stroke-linecap="round" />
+        <line id="min" 
+          x1="150" y1="170" 
+          x2="150" y2="45" 
+          stroke="black" stroke-width="4" stroke-linecap="round" />
+        <line id="sec" 
+          x1="150" y1="180" 
+          x2="150" y2="15" 
+          stroke="red" stroke-width="2" stroke-linecap="round" />
+        <circle 
         cx="150" cy="150" 
-        r="150" 
-        fill="none" 
-        stroke="black" stroke-width="3" />  
-      <line id="hour" 
-        x1="150" y1="150" 
-        x2="150" y2="60" 
-        stroke="black" stroke-width="6" stroke-linecap="round" />
-      <line id="min" 
-        x1="150" y1="150" 
-        x2="150" y2="40" 
-        stroke="black" stroke-width="4" stroke-linecap="round" />
-      <line id="sec" 
-        x1="150" y1="180" 
-        x2="150" y2="20" 
-        stroke="red" stroke-width="2" stroke-linecap="round" />
-      <circle 
-      cx="150" cy="150" 
-      r="6" 
-      fill="red" 
-      stroke="black" stroke-width="4" />
-    </svg>
+        r="6" 
+        fill="red" 
+        stroke="black" stroke-width="4" />
+      </svg>
+    </div>
+      <div class="text-info">
+        <p id="date"></p>
+        <p id="time"></p>
+      </div>
   </div>
   <script src="script.js"></script>
 </body>
