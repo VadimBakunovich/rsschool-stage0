@@ -14,23 +14,36 @@
   <div class="container">
     <div class="clock">
       <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <g id="dashes"></g>
+        <!-- <line x1="150" y1="150" x2="150" y2="0" stroke="black" transform="rotate(0 150 150)"/> -->
+        <circle cx="150" cy="150" r="143" 
+                fill="none" stroke="goldenrod" stroke-width="2" />
+        <text x="207" y="48">1</text>
+        <text x="254" y="94">2</text>
+        <text x="270" y="158">3</text>
+        <text x="252" y="220">4</text>
+        <text x="207" y="268">5</text>
+        <text x="143" y="285">6</text>
+        <text x="80" y="269">7</text>
+        <text x="34" y="222">8</text>
+        <text x="17" y="158">9</text>
+        <text x="27" y="95">10</text>
+        <text x="73" y="48">11</text>
+        <text x="137" y="31">12</text>
         <line id="hour" 
-          x1="150" y1="160" 
-          x2="150" y2="60" 
-          stroke="black" stroke-width="6" stroke-linecap="round" />
+              x1="150" y1="160" 
+              x2="150" y2="65" 
+              stroke="black" stroke-width="6" stroke-linecap="round" />
         <line id="min" 
-          x1="150" y1="170" 
-          x2="150" y2="45" 
-          stroke="black" stroke-width="4" stroke-linecap="round" />
+              x1="150" y1="170" 
+              x2="150" y2="50" 
+              stroke="black" stroke-width="4" stroke-linecap="round" />
         <line id="sec" 
-          x1="150" y1="180" 
-          x2="150" y2="15" 
-          stroke="red" stroke-width="2" stroke-linecap="round" />
-        <circle 
-        cx="150" cy="150" 
-        r="6" 
-        fill="red" 
-        stroke="black" stroke-width="4" />
+              x1="150" y1="180" 
+              x2="150" y2="15" 
+              stroke="red" stroke-width="2" stroke-linecap="round" />
+        <circle cx="150" cy="150" r="6" 
+                fill="red" stroke="black" stroke-width="4" />
       </svg>
     </div>
       <div class="text-info">

@@ -9,7 +9,7 @@ html {
   margin: 0;
   padding: 0;
 }
-.body {
+body {
   font-family: 'Roboto', Arial;
   font-style: normal;
   font-weight: normal;
@@ -30,10 +30,16 @@ html {
   display: flex;
   border: 2px solid goldenrod;
   border-radius: 50%;
-  background: no-repeat center / 320px url('../img/face.png');
+  /* background: no-repeat center / 320px url('../img/face.png'); */
+  background-color: white;
 }
 svg {
   z-index: 10;
+}
+text {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2px;
 }
 .clock::before {
   content: '';
@@ -44,7 +50,7 @@ svg {
   height: 222px;
   border: 1px solid goldenrod;
   border-radius: 50%;
-  box-shadow: 1px 1px 5px 4px rgba(34, 60, 80, 0.2) inset;
+  box-shadow: 1px 1px 4px 2px rgba(34, 60, 80, 0.2) inset;
   /* background-image: url('https://static1.bigstockphoto.com/4/9/1/large2/194679520.jpg');
   background-position: center 40%;
   background-size: 120%;
