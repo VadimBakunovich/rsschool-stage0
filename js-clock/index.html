@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clock</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;&display=swap">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -30,6 +30,8 @@
         <text x="27" y="95">10</text>
         <text x="73" y="48">11</text>
         <text x="137" y="31">12</text>
+        <path class="luch" d="M121 96 L148 73 L138 94 L150 83 L145 94 L156 83 L146 105 L166 80 L167 84 L170 83 L165 94 L178 83" 
+              fill="none" stroke="goldenrod" stroke-width="2" stroke-linecap="round" />
         <line id="hour" 
               x1="150" y1="160" 
               x2="150" y2="65" 
@@ -49,6 +51,41 @@
       <div class="text-info">
         <p id="date"></p>
         <p id="time"></p>
+      </div>
+      <div class="donuts">
+        <svg width="100%" height="100%" viewBox="0 0 42 42">
+          <circle cx="21" cy="21" r="15.91549430918954" 
+                  fill="#fff"></circle>
+          <circle cx="21" cy="21" r="15.91549430918954" 
+                  fill="transparent" stroke="#d2d3d4" stroke-width="6"></circle>
+          <circle id="ringHour" 
+                  cx="21" cy="21" r="15.91549430918954" 
+                  fill="transparent" stroke="#377bbc" stroke-width="6" 
+                  stroke-dashoffset="25"></circle>
+          <text id="hText" x="12" y="26"></text>
+        </svg>
+        <svg width="100%" height="100%" viewBox="0 0 42 42">
+          <circle cx="21" cy="21" r="15.91549430918954" 
+                  fill="#fff"></circle>
+          <circle cx="21" cy="21" r="15.91549430918954" 
+                  fill="transparent" stroke="#d2d3d4" stroke-width="6"></circle>
+          <circle id="ringMin" 
+                  cx="21" cy="21" r="15.91549430918954" 
+                  fill="transparent" stroke="#b1c94e" stroke-width="6" 
+                  stroke-dashoffset="25"></circle>
+          <text id="mText" x="12" y="26"></text>
+        </svg>
+        <svg width="100%" height="100%" viewBox="0 0 42 42">
+          <circle cx="21" cy="21" r="15.91549430918954" 
+                  fill="#fff"></circle>
+          <circle cx="21" cy="21" r="15.91549430918954" 
+                  fill="transparent" stroke="#d2d3d4" stroke-width="6"></circle>
+          <circle id="ringSec" 
+                  cx="21" cy="21" r="15.91549430918954" 
+                  fill="transparent" stroke="#ce4b99" stroke-width="6" 
+                  stroke-dashoffset="25"></circle>
+          <text id="sText" x="12" y="26"></text>
+        </svg>
       </div>
   </div>
   <script src="script.js"></script>

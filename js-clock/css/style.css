@@ -30,13 +30,13 @@ body {
   display: flex;
   border: 2px solid goldenrod;
   border-radius: 50%;
-  /* background: no-repeat center / 320px url('../img/face.png'); */
+  /* background: no-repeat center / 346px url('../img/logo.png'); */
   background-color: white;
 }
 svg {
   z-index: 10;
 }
-text {
+.clock text {
   font-size: 24px;
   font-weight: bold;
   letter-spacing: -2px;
@@ -85,4 +85,12 @@ p {
   margin: 5px;
   font-size: 20px;
   font-weight: 600;
+}
+.donuts {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+#ringSec {
+  transition: stroke-dasharray 300ms;
 }
