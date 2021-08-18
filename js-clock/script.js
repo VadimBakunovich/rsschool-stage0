@@ -20,9 +20,9 @@ setTimeout(function run() {
 	move(sec, 6 * now.getSeconds());
 	move(min, 6 * now.getMinutes() + now.getSeconds() / 10);
 	move(hour, 30 * (now.getHours() % 12) + now.getMinutes() / 2);
-  const ringParam = (elem, time) => {
-    time = (time === 0) ? 60 : time;
-    const offset = 5 * time / 3;
+  const ringParam = (elem, minOrSec) => {
+    minOrSec = (minOrSec === 0) ? 60 : minOrSec;
+    const offset = 5 * minOrSec / 3;
     elem.setAttribute('stroke-dasharray', `${offset} ${100 - offset}`);
   };
   ringParam(ringMin, now.getMinutes());
