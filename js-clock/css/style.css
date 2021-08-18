@@ -1,0 +1,171 @@
+                                          /*Common*/
+html { 
+  box-sizing: border-box;
+  font-size: 1vh;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+.body {
+  font-family: 'Roboto', Arial;
+  font-style: normal;
+  font-weight: normal;
+  transition: filter 500ms;
+}
+.body--dark {
+  filter: brightness(60%);
+}
+                                          /*Background*/
+.bg-wrapper {
+  position: relative;
+}
+.bg {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -10;
+  transition: filter 500ms;
+}
+.bg--dark {
+  filter: brightness(50%);
+}
+                                          /*Mode button*/
+.mode {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-size: 40px;
+  color: #666;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 500ms;
+}
+.mode:hover {
+  color: #333;
+  transform: rotate(90deg);
+}
+.mode--dark {
+  color: gold;
+}
+.mode--dark:hover {
+  color: #fbff00;
+}
+                                          /*Clock block*/
+.common-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  margin: 0 25vw 25vh 0;
+  width: 14vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  background-color: transparent;
+  box-shadow: 4px 4px 6px black;
+}
+.text {
+  width: 100%;
+  padding: 1.1vh 0.5vw;
+  font-size: 0.9vw;
+  font-weight: 400;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
+  transition: color 500ms;
+}
+.text--dark {
+  color: #eee;
+}
+.date {
+  border-radius: 4px 4px 0 0;
+}
+.clock {
+  position: relative;
+  margin: 20px;
+  display: flex;
+  border: 2px solid goldenrod;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 4px 4px 6px black;
+}
+.clock svg {
+  z-index: 10;
+}
+.clock text {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+.clock .country {
+  font-size: 8px;
+  font-style: italic;
+  letter-spacing: 1.5px;
+}
+.clock::before {
+  content: '';
+  position: absolute;
+  top: 12.4%;
+  left: 12.5%;
+  width: 75%;
+  height: 75%;
+  border: 1px solid goldenrod;
+  border-radius: 50%;
+  box-shadow: 1px 1px 4px 2px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f5f5f5;
+}
+.clock::after {
+  content: '';
+  position: absolute;
+  top: 62%;
+  left: 38%;
+  width: 23.7%;
+  height: 23.7%;
+  border: 2px solid goldenrod;
+  border-radius: 50%;
+  background: no-repeat center / 150% url('../img/tourbillon.gif');
+}
+#sec {
+  transition: transform 200ms cubic-bezier(0.4, 2, 0.55, 0.4);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.7));
+}
+#min, #hour {
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
+}
+.donuts {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.donuts svg {
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
+}
+.donuts text {
+  font-size: 12px;
+  fill: #eee;
+}
+.colon {
+  padding-bottom: 0.3rem;
+  font-size: 2.5rem;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+  transition: color 500ms;
+}
+#ringSec {
+  transition: stroke-dasharray 300ms;
+}
