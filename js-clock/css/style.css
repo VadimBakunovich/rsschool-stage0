@@ -1,6 +1,7 @@
                                           /*Common*/
 html { 
   box-sizing: border-box;
+  font-size: 1vh;
 }
 *,
 *::after,
@@ -9,61 +10,132 @@ html {
   margin: 0;
   padding: 0;
 }
-body {
+.body {
   font-family: 'Roboto', Arial;
   font-style: normal;
   font-weight: normal;
-  background-color: #e3e3e3;
+  transition: filter 500ms;
+}
+.body--dark {
+  filter: brightness(60%);
+}
+                                          /*Background*/
+.bg-wrapper {
+  position: relative;
+}
+.bg {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -10;
+  transition: filter 500ms;
+}
+.bg--dark {
+  filter: brightness(50%);
+}
+                                          /*Mode button*/
+.mode {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-size: 40px;
+  color: #666;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 500ms;
+}
+.mode:hover {
+  color: #333;
+  transform: rotate(90deg);
+}
+.mode--dark {
+  color: gold;
+}
+.mode--dark:hover {
+  color: #fbff00;
+}
+                                          /*Clock block*/
+.common-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container {
-  margin: 0 auto;
-  padding: 30px 40px;
-  max-width: 1360px;
-  height: 80vh;
+  margin: 0 25vw 25vh 0;
+  width: 14vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  background-color: transparent;
+  box-shadow: 4px 4px 6px black;
+}
+.text {
+  width: 100%;
+  padding: 1.1vh 0.5vw;
+  font-size: 0.9vw;
+  font-weight: 400;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
+  transition: color 500ms;
+}
+.text--dark {
+  color: #eee;
+}
+.date {
+  border-radius: 4px 4px 0 0;
 }
 .clock {
-  margin-bottom: 30px;
   position: relative;
+  margin: 20px;
   display: flex;
   border: 2px solid goldenrod;
   border-radius: 50%;
-  /* background: no-repeat center / 346px url('../img/logo.png'); */
   background-color: white;
+  box-shadow: 4px 4px 6px black;
 }
-svg {
+.clock svg {
   z-index: 10;
 }
 .clock text {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   letter-spacing: -2px;
+}
+.clock .country {
+  font-size: 8px;
+  font-style: italic;
+  letter-spacing: 1.5px;
 }
 .clock::before {
   content: '';
   position: absolute;
-  top: 38px;
-  left: 38px;
-  width: 222px;
-  height: 222px;
+  top: 12.4%;
+  left: 12.5%;
+  width: 75%;
+  height: 75%;
   border: 1px solid goldenrod;
   border-radius: 50%;
   box-shadow: 1px 1px 4px 2px rgba(34, 60, 80, 0.2) inset;
-  /* background-image: url('https://static1.bigstockphoto.com/4/9/1/large2/194679520.jpg');
-  background-position: center 40%;
-  background-size: 120%;
-  transform: rotate(15deg); */
   background-color: #f5f5f5;
 }
 .clock::after {
   content: '';
   position: absolute;
-  top: 185px;
-  left: 115px;
-  width: 70px;
-  height: 70px;
+  top: 62%;
+  left: 38%;
+  width: 23.7%;
+  height: 23.7%;
   border: 2px solid goldenrod;
   border-radius: 50%;
   background: no-repeat center / 150% url('../img/tourbillon.gif');
@@ -75,21 +147,24 @@ svg {
 #min, #hour {
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
 }
-
-.text-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-p {
-  margin: 5px;
-  font-size: 20px;
-  font-weight: 600;
-}
 .donuts {
-  width: 30%;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.donuts svg {
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.7));
+}
+.donuts text {
+  font-size: 12px;
+  fill: #eee;
+}
+.colon {
+  padding-bottom: 0.3rem;
+  font-size: 2.5rem;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+  transition: color 500ms;
 }
 #ringSec {
   transition: stroke-dasharray 300ms;

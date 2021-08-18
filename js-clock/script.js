@@ -1,3 +1,5 @@
+// adding dashes to the watch face
+
 for (let i = 1; i < 61 ; i++) {
 	dashes.innerHTML += `<line 
                             x1="150" y1="0" 
@@ -6,11 +8,14 @@ for (let i = 1; i < 61 ; i++) {
                             transform="rotate(${i * 6} 150 150)" />`;
 }
 
+// implementation of the movement of the clock hands, displaying the current date and time
+// and changing the state of pie charts
+
 setTimeout(function run() {
   const now = new Date();
 	const move = (hand, angle) => hand.setAttribute('transform', `rotate(${angle} 150 150)`);
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  date.textContent = now.toLocaleDateString('en-US', options);
+  date.textContent = now.toLocaleDateString('en-GB', options);
   time.textContent = now.toLocaleTimeString('en-GB');
 	move(sec, 6 * now.getSeconds());
 	move(min, 6 * now.getMinutes() + now.getSeconds() / 10);
@@ -31,3 +36,15 @@ setTimeout(function run() {
   sText.textContent = (now.getSeconds() < 10) ? '0' + now.getSeconds() : now.getSeconds();
   setTimeout(run, 1000);
 }, 1000);
+
+// handling the event of pressing the button to change the screen mode
+
+mode.addEventListener('click', () => {
+  body.classList.toggle('body--dark');
+  mode.classList.toggle('mode--dark');
+  bg.classList.toggle('bg--dark');
+  date.classList.toggle('text--dark');
+  time.classList.toggle('text--dark');
+  hm.classList.toggle('text--dark');
+  ms.classList.toggle('text--dark');
+})
