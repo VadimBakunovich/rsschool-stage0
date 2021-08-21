@@ -15,24 +15,13 @@
 <body>
   <div class="video-container">
     <video src="video/welcome.mp4" poster="img/poster.jpg" width="1440" id="video"></video>
-    <button class="big-play" id="bigPlay">
-      <svg width="92" height="122" viewBox="0 0 92 122" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path id="bigBtn" d="M91.9535 61.0002L0.527344 0.912109C0.645844 91.4982 0.527344 47.05 0.527344 121.088L91.9535 61.0002Z" fill="white"/>
-      </svg>
-    </button>
+    <button class="big-play" id="bigPlay"></button>
     <div class="controls">
       <button class="play" id="play"></button>
       <input class="video-progress" type="range" value="47" min="0" max="100" step="1">
       <button class="volume" id="volume"></button>
       <input class="volume-progress" type="range" value="47" min="0" max="100" step="1">
-      <button class="fullscreen">
-        <svg id="fullscreen" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30.606 30.7513H22.4102V34.8638H34.7088V22.5068H30.606V30.7513Z" fill="#B3B3B3"/>
-          <path d="M4.10278 22.5068H0V34.8638H12.2986V30.7513H4.10278V22.5068Z" fill="#B3B3B3"/>
-          <path d="M0 12.3569H4.10278V4.12222H12.2986V0H0V12.3569Z" fill="#B3B3B3"/>
-          <path d="M22.4102 0V4.12222H30.606V12.3569H34.7088V0H22.4102Z" fill="#B3B3B3"/>
-        </svg>
-      </button>
+      <button class="fullscreen" id="fullscreen"></button>
     </div>
   </div>
   <script src="script.js"></script>

@@ -1,9 +1,7 @@
 document.addEventListener('click', (e) => {
   console.log(e.target);
   switch (e.target.id) {
-    case 'video':
     case 'bigPlay':
-    case 'bigBtn':
     case 'play':
       play.classList.toggle('pause');
       bigPlay.classList.toggle('hidden');
@@ -14,8 +12,16 @@ document.addEventListener('click', (e) => {
       volume.className === 'volume muted' ? video.muted = true : video.muted = false;
       break;
     case 'fullscreen':
-      video.requestFullscreen({ navigationUI: "hide" });
+      video.requestFullscreen();
       break;
     default: break;
   };
+});
+video.addEventListener('play', () => {
+  play.className === 'play pause' ? play.className = 'play pause' : play.className = 'play pause';
+  bigPlay.className === 'big-play hidden' ? bigPlay.className = 'big-play hidden' : bigPlay.className = 'big-play hidden';
+});
+video.addEventListener('pause', () => {
+  play.className === 'play' ? play.className = 'play' : play.className = 'play';
+  bigPlay.className === 'big-play' ? bigPlay.className = 'big-play' : bigPlay.className = 'big-play';
 });
