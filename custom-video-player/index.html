@@ -13,15 +13,18 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="bg-wrapper">
+    <div class="bg"></div>
+  </div>
   <div class="video-container">
     <video src="video/welcome.mp4" poster="img/poster.jpg" width="1440" id="video"></video>
-    <button class="big-play" id="bigPlay"></button>
+    <button class="big-play" id="playBtnBig"></button>
     <div class="controls">
-      <button class="play" id="play"></button>
-      <input class="video-progress" type="range" value="47" min="0" max="100" step="1">
-      <button class="volume" id="volume"></button>
-      <input class="volume-progress" type="range" value="47" min="0" max="100" step="1">
-      <button class="fullscreen" id="fullscreen"></button>
+      <button class="play" id="playBtn"></button>
+      <input class="video-progress" id="progress" type="range" value="0" min="0" max="100" step="1">
+      <button class="volume" id="muteBtn"></button>
+      <input class="volume-progress" id="vol" type="range" value="100" min="0" max="100" step="1">
+      <button class="fullscreen" id="fullscreenBtn"></button>
     </div>
   </div>
   <script src="script.js"></script>
