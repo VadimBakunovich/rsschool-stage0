@@ -8,23 +8,24 @@
   <title>Custom video player</title>
   <link rel="icon" href="img/favicon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400&display=swap" >
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="body">
   <div class="bg-wrapper">
     <div class="bg"></div>
   </div>
-  <div class="video-container">
-    <video src="video/welcome.mp4" poster="img/poster.jpg" width="1440" id="video"></video>
-    <button class="big-play" id="playBtnBig"></button>
+  <div class="video-container" id="player">
+    <video src="video/welcome.mp4" poster="img/poster.jpg" id="video"></video>
+    <button class="big-play" id="playBtnBig" title="play / pause"></button>
+    <div class="overlay hidden" id="overlay"></div>
     <div class="controls">
-      <button class="play" id="playBtn"></button>
+      <button class="play" id="playBtn" title="play / pause"></button>
       <input class="video-progress" id="progress" type="range" value="0" min="0" max="100" step="1">
-      <button class="volume" id="muteBtn"></button>
+      <button class="volume" id="muteBtn" title="mute"></button>
       <input class="volume-progress" id="vol" type="range" value="100" min="0" max="100" step="1">
-      <button class="fullscreen" id="fullscreenBtn"></button>
+      <button class="fullscreen" id="fullscreenBtn" title="fullscreen"></button>
     </div>
   </div>
   <script src="script.js"></script>
