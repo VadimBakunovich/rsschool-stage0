@@ -18,8 +18,7 @@ button {
   border: none;
   background-color: #000;
   cursor: pointer;
-  outline: none;
-  transition: 300ms;
+  transition: 400ms;
 }
 button:hover {
   filter: brightness(80%);
@@ -114,6 +113,7 @@ button:hover {
   height: 8px;
   width: 929px;
   appearance: none;
+  cursor: pointer;
 }
 .video-progress::-webkit-slider-thumb,
 .volume-progress::-webkit-slider-thumb  {
@@ -164,9 +164,13 @@ button:hover {
   height: 8px;
   width: 155px;
   appearance: none;
+  cursor: pointer;
 }
 .fullscreen {
   width: 35px;
   height: 35px;
   background: no-repeat url(../img/fullscreen.svg);
+}
+.fullscreen:hover {
+  transform: scale(1.1);
 }
