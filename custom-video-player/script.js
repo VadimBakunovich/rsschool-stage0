@@ -1,3 +1,6 @@
+let timerOverlay;
+let timerCursor;
+
 // mute control
 const muteAudio = () => {
   muteBtn.classList.toggle('muted');
@@ -10,9 +13,11 @@ const progressBarApperance = (value) =>`
 
 // overlay display control
 const overlayApperance = (inner) => {
+  currSec = new Date().getSeconds();
   overlay.innerHTML = inner;
   overlay.classList.remove('hidden');
-  setTimeout(() => overlay.classList.add('hidden'), 1000);
+  clearTimeout(timerOverlay);
+  timerOverlay = setTimeout(() => overlay.classList.add('hidden'), 1000);
 };
 
 // add control of the video player using the mouse
@@ -21,14 +26,12 @@ document.addEventListener('click', (e) => {
     case 'video':
     case 'playBtnBig':
     case 'playBtn':
-      if (!document.fullscreenElement) {
-        playBtn.classList.toggle('pause');
-        playBtnBig.classList.toggle('hidden');
-        video.paused ? video.play() : video.pause();
-      };
+      playBtn.classList.toggle('pause');
+      playBtnBig.classList.toggle('hidden');
+      video.paused ? video.play() : video.pause();
       break;
     case 'muteBtn': muteAudio(); break;
-    case 'fullscreenBtn': return video.requestFullscreen();
+    case 'fullscreenBtn': return document.fullscreenElement ? document.exitFullscreen() : player.requestFullscreen();
     default: break;
   };
 });
@@ -39,10 +42,10 @@ document.addEventListener('keyup', (e) => {
     case 'Space':
     case 'KeyK': return video.paused ? video.play() : video.pause();
     case 'KeyM': muteAudio(); break;
-    case 'KeyF': return document.fullscreenElement ? document.exitFullscreen() : video.requestFullscreen();
+    case 'KeyF': return document.fullscreenElement ? document.exitFullscreen() : player.requestFullscreen();
     default: break;
   };
-  if (!isNaN(+e.key) && +e.key >= 0) video.currentTime = +e.key * video.duration / 10; 
+  if (!isNaN(+e.key) && +e.key >= 0) video.currentTime = +e.key * video.duration / 10;
   if (e.shiftKey && e.code === 'Period') {
     video.playbackRate === 2 ? video.playbackRate = 2 : video.playbackRate += 0.25;
     overlayApperance(`${video.playbackRate}x`);
@@ -68,43 +71,32 @@ document.addEventListener('keydown', (e) => {
       break;
     case 'ArrowLeft':
       video.currentTime > 5 ? video.currentTime -= 5 : video.currentTime = 0;
-      overlayApperance('⏪ 5 sec');
+      overlayApperance('<< 5 sec');
       break;
     case 'ArrowRight':
       video.currentTime < video.duration - 5 ? video.currentTime += 5 : video.currentTime = video.duration;
-      overlayApperance('⏩ 5 sec');
+      overlayApperance('>> 5 sec');
       break;
     case 'KeyJ':
       video.currentTime > 10 ? video.currentTime -= 10 : video.currentTime = 0;
-      overlayApperance('⏪ 10 sec');
+      overlayApperance('<< 10 sec');
       break;
     case 'KeyL':
       video.currentTime < video.duration - 10 ? video.currentTime += 10 : video.currentTime = video.duration;
-      overlayApperance('⏩ 10 sec');
+      overlayApperance('>> 10 sec');
       break;
     case 'Period':
-      if (video.paused) {
+      if (video.paused && !e.shiftKey) {
         video.currentTime += 0.17;
-        overlayApperance('⏩');
+        overlayApperance('>>');
       }; break;
     case 'Comma': 
-      if (video.paused) {
+      if (video.paused && !e.shiftKey) {
         video.currentTime -= 0.17;
-        overlayApperance('⏪');
+        overlayApperance('<<');
       }; break;
     default: break;
   };
-});
-
-// fix the display of play buttons after exiting full screen mode
-video.addEventListener('play', () => {
-  if (playBtn.className !== 'play pause') playBtn.className = 'play pause';
-  if (playBtnBig.className !== 'big-play hidden') playBtnBig.className = 'big-play hidden';
-});
-
-video.addEventListener('pause', () => {
-  if (playBtn.className !== 'play') playBtn.className = 'play';
-  if (playBtnBig.className !== 'big-play') playBtnBig.className = 'big-play';
 });
 
 // control the display of the video progress bar
@@ -156,6 +148,27 @@ video.addEventListener('volumechange', () => {
   video.volume === 0 || video.muted ? muteBtn.classList.add('muted') : muteBtn.classList.remove('muted');
 });
 
+// control the disappearance of the cursor and control panel
+document.addEventListener('mousemove', () => {
+  if (document.fullscreenElement) {
+    player.style.cursor = 'default';
+    controls.style.opacity = 1;
+    clearTimeout(timerCursor);
+    timerCursor = setTimeout(() => {
+      player.style.cursor = 'none';
+      controls.style.opacity = 0;
+      }, 3000);
+  };
+});
+
+document.addEventListener('fullscreenchange', () => {
+  if (!document.fullscreenElement) {
+    clearTimeout(timerCursor);
+    player.style.cursor = 'default';
+    controls.style.opacity = 1;
+  };
+});
+
 console.log(`
 Результаты самопроверки:
   1. Разобраться в коде чужого проекта, понять его, воспроизвести исходное приложение.
@@ -176,13 +189,16 @@ console.log(`
       ',' - перейти к предыдущему кадру (когда воспроизведение приостановлено) (+2 балла);
       '.' - перейти к следующему кадру (когда воспроизведение приостановлено) (+2 балла);
       '0..9' - перейти к определенному моменту видео (например, при нажатии на цифру '7' ролик будет перемотан
-                до временной отметки, которая соответствует 70% от длительности видео) (+2 балла) или (+20 баллов, т.к. клавиш 10);
+                до временной отметки, которая соответствует 70% от длительности видео) (+2 балла);
       '↑' - увеличить громкость (+2 балла);
       '↓' - уменьшить громкость (+2 балла);
       '←' - перемотать видео на 5 сек. назад (+2 балла);
       '→' - перемотать видео на 5 сек. вперед (+2 балла);
-      Реализовано отображение текущей громкости, скорости воспроизведения и пр., при их изменении.
-      Реализовано 'умное' управление громкостью как в YouTube.
+  4. Также реализован следующий дополнительный функционал:
+      - отображение текущей громкости, скорости воспроизведения и пр., при их изменении;
+      - 'умное' управление громкостью как в YouTube;
+      - кастомная панель управления в режиме fullscreen;
+      - 'умное' исчезновение курсора и панели управления в режиме fullscreen;
   Итого: не менее 40 баллов за выполненную работу.
-  Т.к. за задание максимум баллов 30, то и результат выполнения задания 30 баллов.
+  Т.к. за задание максимум 30 баллов, то и результат выполнения задания 30 баллов.
 `);
