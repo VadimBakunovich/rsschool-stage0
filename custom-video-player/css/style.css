@@ -50,7 +50,6 @@ button:hover {
   overflow: hidden;
 }
 .video-container:fullscreen {
-  height: 100vh;
   cursor: none;
 }
 video {
@@ -59,9 +58,6 @@ video {
 }
 .video-container:fullscreen > video {
   margin-top: 0;
-}
-video::-webkit-media-controls-enclosure {
-  display: none !important;
 }
 .big-play {
   position: absolute;
@@ -142,14 +138,18 @@ video::-webkit-media-controls-enclosure {
   appearance: none;
   cursor: pointer;
 }
-.video-progress::-webkit-slider-thumb,
-.volume-progress::-webkit-slider-thumb  {
+input::-webkit-slider-thumb {
   width: 15px;
   height: 15px;
   border-radius: 50%;
   appearance: none;
   cursor: ew-resize;
   background: #fff;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.controls:hover > input::-webkit-slider-thumb {
+  opacity: 1;
 }
 .volume {
   position: relative;
