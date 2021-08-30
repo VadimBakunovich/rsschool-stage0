@@ -13,7 +13,6 @@ const progressBarApperance = (value) =>`
 
 // overlay display control
 const overlayApperance = (inner) => {
-  currSec = new Date().getSeconds();
   overlay.innerHTML = inner;
   overlay.classList.remove('hidden');
   clearTimeout(timerOverlay);
@@ -26,8 +25,6 @@ document.addEventListener('click', (e) => {
     case 'video':
     case 'playBtnBig':
     case 'playBtn':
-      playBtn.classList.toggle('pause');
-      playBtnBig.classList.toggle('hidden');
       video.paused ? video.play() : video.pause();
       break;
     case 'muteBtn': muteAudio(); break;
@@ -58,24 +55,41 @@ document.addEventListener('keyup', (e) => {
 
 // add control of the video player using the keyboard (second group)
 document.addEventListener('keydown', (e) => {
+  if (document.fullscreenElement) {
+    player.style.cursor = 'default';
+    controls.style.opacity = 1;
+    clearTimeout(timerCursor);
+    timerCursor = setTimeout(() => {
+      player.style.cursor = 'none';
+      controls.style.opacity = 0;
+    }, 3000);
+  };
   switch (e.code) {
     case 'ArrowUp':
-      if (!video.muted) video.volume > 0.95 ? video.volume = 1 : video.volume += 0.05;
-      else {
-        video.muted = false;
-        video.volume = 0.05;
+      if (document.activeElement.id !== 'progress') {
+        if (!video.muted) video.volume > 0.95 ? video.volume = 1 : video.volume += 0.05;
+        else {
+          video.muted = false;
+          video.volume = 0.05;
+        };
       };
       break;
     case 'ArrowDown':
-      if (!video.muted) video.volume < 0.05 ? video.volume = 0 : video.volume -= 0.05;
+      if (document.activeElement.id !== 'progress') {
+        if (!video.muted) video.volume < 0.05 ? video.volume = 0 : video.volume -= 0.05;
+      };
       break;
     case 'ArrowLeft':
-      video.currentTime > 5 ? video.currentTime -= 5 : video.currentTime = 0;
-      overlayApperance('<< 5 sec');
+      if (document.activeElement.id !== 'progress') {
+        video.currentTime > 5 ? video.currentTime -= 5 : video.currentTime = 0;
+        overlayApperance('<< 5 sec');
+      };
       break;
     case 'ArrowRight':
-      video.currentTime < video.duration - 5 ? video.currentTime += 5 : video.currentTime = video.duration;
-      overlayApperance('>> 5 sec');
+      if (document.activeElement.id !== 'progress') {
+        video.currentTime < video.duration - 5 ? video.currentTime += 5 : video.currentTime = video.duration;
+        overlayApperance('>> 5 sec');
+      };
       break;
     case 'KeyJ':
       video.currentTime > 10 ? video.currentTime -= 10 : video.currentTime = 0;
@@ -97,6 +111,17 @@ document.addEventListener('keydown', (e) => {
       }; break;
     default: break;
   };
+});
+
+// change the display of play buttons
+video.addEventListener('play', () => {
+  playBtn.className = 'play pause';
+  playBtnBig.className = 'big-play hidden';
+});
+
+video.addEventListener('pause', () => {
+  playBtn.className = 'play';
+  playBtnBig.className = 'big-play';
 });
 
 // control the display of the video progress bar
@@ -157,7 +182,7 @@ document.addEventListener('mousemove', () => {
     timerCursor = setTimeout(() => {
       player.style.cursor = 'none';
       controls.style.opacity = 0;
-      }, 3000);
+    }, 3000);
   };
 });
 
