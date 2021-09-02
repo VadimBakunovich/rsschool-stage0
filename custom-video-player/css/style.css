@@ -43,9 +43,7 @@ button:hover {
   position: relative;
   margin: 0 auto;
   max-width: 1440px;
-  height: 735px;
-  display: flex;
-  flex-direction: column;
+  max-height: 735px;
   box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.8);
   overflow: hidden;
 }
@@ -54,7 +52,7 @@ button:hover {
 }
 video {
   width: 100%;
-  margin-top: -90px;
+  margin-top: -79px;
 }
 .video-container:fullscreen > video {
   margin-top: 0;
@@ -64,8 +62,8 @@ video {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 220px;
-  height: 220px;
+  width: 16%;
+  height: 30%;
   background: no-repeat center url(../img/big-play.svg);
 }
 .overlay {
@@ -93,10 +91,8 @@ video {
   bottom: 0;
   display: flex;
   align-items: center;
-  height: 85px;
   padding: 25px 30px;
   background-color: #000;
-  z-index: 2147483648;
 }
 .video-container:fullscreen > .controls {
   background-color: transparent;
@@ -104,37 +100,20 @@ video {
   opacity: 0;
 }
 .play {
-  position: relative;
   width: 23px;
   height: 31px;
   margin-right: 50px;
-}
-.play::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 23px;
-  height: 31px;
   background: no-repeat url(../img/play.svg);
   transition: 400ms;
 }
-.pause::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 23px;
-  height: 31px;
+.pause {
   background: no-repeat url(../img/pause.svg);
-  transition: 400ms;
 }
 .video-progress {
   margin-right: 50px;
   flex-grow: 1;
   background: linear-gradient(to right, #710707 0%, #710707 0%, #c4c4c4 0%, #c4c4c4 100%);
   height: 8px;
-  width: 929px;
   appearance: none;
   cursor: pointer;
 }
@@ -152,40 +131,17 @@ input::-webkit-slider-thumb {
   opacity: 1;
 }
 .volume {
-  position: relative;
   width: 38px;
   height: 31px;
   margin-right: 50px;
-}
-.volume::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 38px;
-  height: 31px;
   background: no-repeat url(../img/volume.svg);
-  transition: 250ms;
+  transition: 300ms;
 }
-.vol50::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 38px;
-  height: 31px;
+.vol50 {
   background: no-repeat url(../img/vol50.svg);
-  transition: 250ms;
 }
-.muted::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 38px;
-  height: 31px;
+.muted {
   background: no-repeat url(../img/muted.svg);
-  transition: 250ms;
 }
 .volume-progress {
   margin-right: 50px;
@@ -196,8 +152,8 @@ input::-webkit-slider-thumb {
   cursor: pointer;
 }
 .fullscreen {
-  width: 36px;
-  height: 36px;
+  width: 35px;
+  height: 35px;
   background: no-repeat url(../img/fullscreen.svg);
 }
 .video-container:fullscreen > .controls > .fullscreen {
