@@ -33,6 +33,9 @@ document.addEventListener('click', (e) => {
   };
 });
 
+// add fullscreen mode by double click
+video.addEventListener('dblclick', () => document.fullscreenElement ? document.exitFullscreen() : player.requestFullscreen());
+
 // add control of the video player using the keyboard (first group)
 document.addEventListener('keyup', (e) => {
   switch (e.code) {
@@ -45,11 +48,9 @@ document.addEventListener('keyup', (e) => {
   if (!isNaN(+e.key) && +e.key >= 0) video.currentTime = +e.key * video.duration / 10;
   if (e.shiftKey && e.code === 'Period') {
     video.playbackRate === 2 ? video.playbackRate = 2 : video.playbackRate += 0.25;
-    overlayApperance(`${video.playbackRate}x`);
   };
   if (e.shiftKey && e.code === 'Comma') {
     video.playbackRate === 0.25 ? video.playbackRate = 0.25 : video.playbackRate -= 0.25;
-    overlayApperance(`${video.playbackRate}x`);
   };
 });
 
@@ -129,6 +130,9 @@ video.addEventListener('timeupdate', () => {
   progress.value = video.currentTime * 100 / video.duration;
   progress.style.background = progressBarApperance(progress.value);
 });
+
+// control overlay display when changing video playback speed
+video.addEventListener('ratechange', () => overlayApperance(`${video.playbackRate}x`));
 
 // control video rewind
 progress.addEventListener('input', () => {
@@ -224,6 +228,7 @@ console.log(`
       - 'умное' управление громкостью как в YouTube;
       - кастомная панель управления в режиме fullscreen;
       - 'умное' исчезновение курсора и панели управления в режиме fullscreen;
+      - полноэкранный режим, а также выход из него по двойному щелчку мыши по видео.
   Итого: не менее 40 баллов за выполненную работу.
   Т.к. за задание максимум 30 баллов, то и результат выполнения задания 30 баллов.
 `);
